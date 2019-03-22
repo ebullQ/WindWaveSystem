@@ -1,0 +1,441 @@
+1
+
+                    Execution started at 20190320.183849         
+
+
+
+                    ---------------------------------------
+                                     SWAN
+                    SIMULATION OF WAVES IN NEAR SHORE AREAS
+                             VERSION NUMBER 41.20AB             
+                    ---------------------------------------
+
+
+    
+ PROJECT 'Curonian' '01'
+    
+ 
+    
+ SET NAUTICAL
+    
+ 
+    
+ MODE STATIONARY TWODIMENSIONAL
+    
+ 
+    
+ COORD CARTESIAN
+    
+ 
+    
+ CGRID REGULAR 470000 6083000 0 53000 95000 105 189 CIRCLE 36 0.055 0.6 24
+ Resolution in sigma-space: df/f =  0.1047
+    
+ 
+    
+ INPGRID BOTTOM REG 470000 6083000 0 105 189 500 500
+    
+ 
+    
+ READINP BOTTOM 1 '500.bot' FREE
+    
+ 
+    
+ WIND 6.05 215
+    
+ 
+    
+ GEN3 JANSSEN
+    
+ 
+    
+ BRE CON 1.0 0.8
+    
+ 
+    
+ GROUP 'curres' SUBGRID 1 105 1 189
+    
+ 
+    
+ BLOCK 'curres' HEADER 'curres.txt' HSIGN
+    
+ 
+    
+ COMPUTE
+
+----------------------------------------------------------------
+                  COMPUTATIONAL PART OF SWAN
+----------------------------------------------------------------
+
+ Gridresolution       : MXC             106 MYC            190
+                      : MCGRD         20141
+                      : MSC              25 MDC             36
+                      : MTC               1
+                      : NSTATC            0 ITERMX          50
+ Propagation flags    : ITFRE             1 IREFR            1
+ Source term flags    : IBOT              0 ISURF            1
+                      : IWCAP             2 IWIND            4
+                      : ITRIAD            0 IQUAD            2
+                      : IVEG              0 ITURBV           0
+                      : IMUD              0
+ Spatial step         : DX       0.5048E+03 DY      0.5026E+03
+ Spectral bin         : df/f     0.1047E+00 DDIR    0.1000E+02
+ Physical constants   : GRAV     0.9810E+01 RHO     0.1025E+04
+ Wind input           : WSPEED   0.6050E+01 DIR     0.5500E+02
+ Tail parameters      : E(f)     0.5000E+01 E(k)    0.2500E+01
+                      : A(f)     0.6000E+01 A(k)    0.3000E+01
+ Accuracy parameters  : DREL     0.1000E-01 NPNTS   0.9950E+02
+                      : DHABS    0.5000E-02 CURVAT  0.5000E-02
+                      : GRWMX    0.1000E+00
+ Drying/flooding      : LEVEL    0.0000E+00 DEPMIN  0.5000E-01
+ The nautical  convention for wind and wave directions is used
+ Scheme for geographic propagation is SORDUP
+ Scheme geogr. space  : PROPSC            2 ICMAX            7
+ Scheme spectral space: CSS      0.5000E+00 CDD     0.5000E+00
+ Current is off
+ Quadruplets          : IQUAD             2
+                      : LAMBDA   0.2500E+00 CNL4    0.3000E+08
+                      : CSH1     0.5500E+01 CSH2    0.8330E+00
+                      : CSH3    -0.1250E+01
+ Maximum Ursell nr for Snl4 :    0.1000E+02
+ Triads is off
+ Bottom friction is off
+ Vegetation is off
+ Turbulence is off
+ Fluid mud is off
+ W-cap Janssen (`90)  : CFJANS   0.4500E+01 DELTA   0.5000E+00
+ Wind drag is fit
+ Janssen wind input
+ Battjes&Janssen (`78): ALPHA    0.1000E+01 GAMMA   0.8000E+00
+ Set-up is off
+ Diffraction is off
+ Janssen (`89,`90)    : ALPHA    0.1000E-01 KAPPA   0.4100E+00
+ Janssen (`89,`90)    : RHOA     0.1280E+01 RHOW    0.1025E+04
+ 
+ 1st and 2nd gen. wind: CF10     0.1880E+03 CF20    0.5900E+00
+                      : CF30     0.1200E+00 CF40    0.2500E+03
+                      : CF50     0.2300E-02 CF60   -0.2230E+00
+                      : CF70     0.0000E+00 CF80   -0.5600E+00
+                      : RHOAW    0.1249E-02 EDMLPM  0.3600E-02
+                      : CDRAG    0.1230E-02 UMIN    0.1000E+01
+                      : LIM_PM   0.1300E+00
+ 
+  ---------------------------------------------------------------
+  First guess by 2nd generation model flags for first iteration:
+  ITER       1 GRWMX      0.1000E+23 ALFA       0.0000E+00
+  IWIND      2 IWCAP      0 IQUAD      0
+  ITRIAD     0 IBOT       0 ISURF      1
+  IVEG       0 ITURBV     0 IMUD       0
+  ---------------------------------------------------------------
+ iteration    1; sweep 1
+ iteration    1; sweep 2
+ iteration    1; sweep 3
+ iteration    1; sweep 4
+ not possible to compute, first iteration
+
+  ---------------------------------------------------------------
+  Options given by user are activated for proceeding calculation:
+  ITER       2 GRWMX      0.1000E+00 ALFA       0.0000E+00
+  IWIND      4 IWCAP      2 IQUAD      2
+  ITRIAD     0 IBOT       0 ISURF      1
+  IVEG       0 ITURBV     0 IMUD       0
+  ---------------------------------------------------------------
+ iteration    2; sweep 1
+ iteration    2; sweep 2
+ iteration    2; sweep 3
+ iteration    2; sweep 4
+ accuracy OK in  18.33 % of wet grid points ( 99.50 % required)
+
+ iteration    3; sweep 1
+ iteration    3; sweep 2
+ iteration    3; sweep 3
+ iteration    3; sweep 4
+ accuracy OK in   0.00 % of wet grid points ( 99.50 % required)
+
+ iteration    4; sweep 1
+ iteration    4; sweep 2
+ iteration    4; sweep 3
+ iteration    4; sweep 4
+ accuracy OK in   6.11 % of wet grid points ( 99.50 % required)
+
+ iteration    5; sweep 1
+ iteration    5; sweep 2
+ iteration    5; sweep 3
+ iteration    5; sweep 4
+ accuracy OK in   4.55 % of wet grid points ( 99.50 % required)
+
+ iteration    6; sweep 1
+ iteration    6; sweep 2
+ iteration    6; sweep 3
+ iteration    6; sweep 4
+ accuracy OK in   7.03 % of wet grid points ( 99.50 % required)
+
+ iteration    7; sweep 1
+ iteration    7; sweep 2
+ iteration    7; sweep 3
+ iteration    7; sweep 4
+ accuracy OK in   5.37 % of wet grid points ( 99.50 % required)
+
+ iteration    8; sweep 1
+ iteration    8; sweep 2
+ iteration    8; sweep 3
+ iteration    8; sweep 4
+ accuracy OK in   6.53 % of wet grid points ( 99.50 % required)
+
+ iteration    9; sweep 1
+ iteration    9; sweep 2
+ iteration    9; sweep 3
+ iteration    9; sweep 4
+ accuracy OK in   7.26 % of wet grid points ( 99.50 % required)
+
+ iteration   10; sweep 1
+ iteration   10; sweep 2
+ iteration   10; sweep 3
+ iteration   10; sweep 4
+ accuracy OK in  11.15 % of wet grid points ( 99.50 % required)
+
+ iteration   11; sweep 1
+ iteration   11; sweep 2
+ iteration   11; sweep 3
+ iteration   11; sweep 4
+ accuracy OK in  13.66 % of wet grid points ( 99.50 % required)
+
+ iteration   12; sweep 1
+ iteration   12; sweep 2
+ iteration   12; sweep 3
+ iteration   12; sweep 4
+ accuracy OK in  22.35 % of wet grid points ( 99.50 % required)
+
+ iteration   13; sweep 1
+ iteration   13; sweep 2
+ iteration   13; sweep 3
+ iteration   13; sweep 4
+ accuracy OK in  45.70 % of wet grid points ( 99.50 % required)
+
+ iteration   14; sweep 1
+ iteration   14; sweep 2
+ iteration   14; sweep 3
+ iteration   14; sweep 4
+ accuracy OK in  47.46 % of wet grid points ( 99.50 % required)
+
+ iteration   15; sweep 1
+ iteration   15; sweep 2
+ iteration   15; sweep 3
+ iteration   15; sweep 4
+ accuracy OK in  65.79 % of wet grid points ( 99.50 % required)
+
+ iteration   16; sweep 1
+ iteration   16; sweep 2
+ iteration   16; sweep 3
+ iteration   16; sweep 4
+ accuracy OK in  73.73 % of wet grid points ( 99.50 % required)
+
+ iteration   17; sweep 1
+ iteration   17; sweep 2
+ iteration   17; sweep 3
+ iteration   17; sweep 4
+ accuracy OK in  71.99 % of wet grid points ( 99.50 % required)
+
+ iteration   18; sweep 1
+ iteration   18; sweep 2
+ iteration   18; sweep 3
+ iteration   18; sweep 4
+ accuracy OK in  79.58 % of wet grid points ( 99.50 % required)
+
+ iteration   19; sweep 1
+ iteration   19; sweep 2
+ iteration   19; sweep 3
+ iteration   19; sweep 4
+ accuracy OK in  80.93 % of wet grid points ( 99.50 % required)
+
+ iteration   20; sweep 1
+ iteration   20; sweep 2
+ iteration   20; sweep 3
+ iteration   20; sweep 4
+ accuracy OK in  84.96 % of wet grid points ( 99.50 % required)
+
+ iteration   21; sweep 1
+ iteration   21; sweep 2
+ iteration   21; sweep 3
+ iteration   21; sweep 4
+ accuracy OK in  79.61 % of wet grid points ( 99.50 % required)
+
+ iteration   22; sweep 1
+ iteration   22; sweep 2
+ iteration   22; sweep 3
+ iteration   22; sweep 4
+ accuracy OK in  88.23 % of wet grid points ( 99.50 % required)
+
+ iteration   23; sweep 1
+ iteration   23; sweep 2
+ iteration   23; sweep 3
+ iteration   23; sweep 4
+ accuracy OK in  82.37 % of wet grid points ( 99.50 % required)
+
+ iteration   24; sweep 1
+ iteration   24; sweep 2
+ iteration   24; sweep 3
+ iteration   24; sweep 4
+ accuracy OK in  80.97 % of wet grid points ( 99.50 % required)
+
+ iteration   25; sweep 1
+ iteration   25; sweep 2
+ iteration   25; sweep 3
+ iteration   25; sweep 4
+ accuracy OK in  81.12 % of wet grid points ( 99.50 % required)
+
+ iteration   26; sweep 1
+ iteration   26; sweep 2
+ iteration   26; sweep 3
+ iteration   26; sweep 4
+ accuracy OK in  85.88 % of wet grid points ( 99.50 % required)
+
+ iteration   27; sweep 1
+ iteration   27; sweep 2
+ iteration   27; sweep 3
+ iteration   27; sweep 4
+ accuracy OK in  85.91 % of wet grid points ( 99.50 % required)
+
+ iteration   28; sweep 1
+ iteration   28; sweep 2
+ iteration   28; sweep 3
+ iteration   28; sweep 4
+ accuracy OK in  89.04 % of wet grid points ( 99.50 % required)
+
+ iteration   29; sweep 1
+ iteration   29; sweep 2
+ iteration   29; sweep 3
+ iteration   29; sweep 4
+ accuracy OK in  83.12 % of wet grid points ( 99.50 % required)
+
+ iteration   30; sweep 1
+ iteration   30; sweep 2
+ iteration   30; sweep 3
+ iteration   30; sweep 4
+ accuracy OK in  85.85 % of wet grid points ( 99.50 % required)
+
+ iteration   31; sweep 1
+ iteration   31; sweep 2
+ iteration   31; sweep 3
+ iteration   31; sweep 4
+ accuracy OK in  85.68 % of wet grid points ( 99.50 % required)
+
+ iteration   32; sweep 1
+ iteration   32; sweep 2
+ iteration   32; sweep 3
+ iteration   32; sweep 4
+ accuracy OK in  83.60 % of wet grid points ( 99.50 % required)
+
+ iteration   33; sweep 1
+ iteration   33; sweep 2
+ iteration   33; sweep 3
+ iteration   33; sweep 4
+ accuracy OK in  82.49 % of wet grid points ( 99.50 % required)
+
+ iteration   34; sweep 1
+ iteration   34; sweep 2
+ iteration   34; sweep 3
+ iteration   34; sweep 4
+ accuracy OK in  84.82 % of wet grid points ( 99.50 % required)
+
+ iteration   35; sweep 1
+ iteration   35; sweep 2
+ iteration   35; sweep 3
+ iteration   35; sweep 4
+ accuracy OK in  79.68 % of wet grid points ( 99.50 % required)
+
+ iteration   36; sweep 1
+ iteration   36; sweep 2
+ iteration   36; sweep 3
+ iteration   36; sweep 4
+ accuracy OK in  86.36 % of wet grid points ( 99.50 % required)
+
+ iteration   37; sweep 1
+ iteration   37; sweep 2
+ iteration   37; sweep 3
+ iteration   37; sweep 4
+ accuracy OK in  88.75 % of wet grid points ( 99.50 % required)
+
+ iteration   38; sweep 1
+ iteration   38; sweep 2
+ iteration   38; sweep 3
+ iteration   38; sweep 4
+ accuracy OK in  84.23 % of wet grid points ( 99.50 % required)
+
+ iteration   39; sweep 1
+ iteration   39; sweep 2
+ iteration   39; sweep 3
+ iteration   39; sweep 4
+ accuracy OK in  86.03 % of wet grid points ( 99.50 % required)
+
+ iteration   40; sweep 1
+ iteration   40; sweep 2
+ iteration   40; sweep 3
+ iteration   40; sweep 4
+ accuracy OK in  83.06 % of wet grid points ( 99.50 % required)
+
+ iteration   41; sweep 1
+ iteration   41; sweep 2
+ iteration   41; sweep 3
+ iteration   41; sweep 4
+ accuracy OK in  88.39 % of wet grid points ( 99.50 % required)
+
+ iteration   42; sweep 1
+ iteration   42; sweep 2
+ iteration   42; sweep 3
+ iteration   42; sweep 4
+ accuracy OK in  89.95 % of wet grid points ( 99.50 % required)
+
+ iteration   43; sweep 1
+ iteration   43; sweep 2
+ iteration   43; sweep 3
+ iteration   43; sweep 4
+ accuracy OK in  89.02 % of wet grid points ( 99.50 % required)
+
+ iteration   44; sweep 1
+ iteration   44; sweep 2
+ iteration   44; sweep 3
+ iteration   44; sweep 4
+ accuracy OK in  89.54 % of wet grid points ( 99.50 % required)
+
+ iteration   45; sweep 1
+ iteration   45; sweep 2
+ iteration   45; sweep 3
+ iteration   45; sweep 4
+ accuracy OK in  85.82 % of wet grid points ( 99.50 % required)
+
+ iteration   46; sweep 1
+ iteration   46; sweep 2
+ iteration   46; sweep 3
+ iteration   46; sweep 4
+ accuracy OK in  87.61 % of wet grid points ( 99.50 % required)
+
+ iteration   47; sweep 1
+ iteration   47; sweep 2
+ iteration   47; sweep 3
+ iteration   47; sweep 4
+ accuracy OK in  87.82 % of wet grid points ( 99.50 % required)
+
+ iteration   48; sweep 1
+ iteration   48; sweep 2
+ iteration   48; sweep 3
+ iteration   48; sweep 4
+ accuracy OK in  91.22 % of wet grid points ( 99.50 % required)
+
+ iteration   49; sweep 1
+ iteration   49; sweep 2
+ iteration   49; sweep 3
+ iteration   49; sweep 4
+ accuracy OK in  88.58 % of wet grid points ( 99.50 % required)
+
+ iteration   50; sweep 1
+ iteration   50; sweep 2
+ iteration   50; sweep 3
+ iteration   50; sweep 4
+ accuracy OK in  90.01 % of wet grid points ( 99.50 % required)
+
+ 
+    
+ 
+    
+ STOP
