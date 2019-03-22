@@ -21,7 +21,7 @@ public class ImageCreatorService {
         int width = map.length;
         int height = map[0].length;
         BufferedImage bufferedImage = new BufferedImage(height,width,BufferedImage.TYPE_INT_RGB);
-        int color = 0xffffff;
+        int color;
         for (int i = 0; i< width; i++) {
             for (int j = 0; j < height; j++) {
                 color = getColor(map[i][j]);
@@ -29,7 +29,8 @@ public class ImageCreatorService {
             }
         }
         try {
-            ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png"));
+            //ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png")); WINDOWS
+            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/img.png")); // MACOS
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,7 +38,8 @@ public class ImageCreatorService {
 
 
     private static double[][] getMap(){
-        File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt");
+        //File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt"); WINDOWS
+        File file = new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/curres.txt"); // MACOS
 
         double[][] map = new double[188][105];
 
