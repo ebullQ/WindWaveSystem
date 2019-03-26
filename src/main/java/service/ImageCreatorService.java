@@ -21,20 +21,32 @@ public class ImageCreatorService {
         int width = map.length;
         int height = map[0].length;
         BufferedImage bufferedImage = new BufferedImage(height,width,BufferedImage.TYPE_INT_RGB);
+        Color c = new Color();
+        Color c2 = new Color();
         int color;
+        int scaleColor = c2.getColor();
         for (int i = 0; i< width; i++) {
             for (int j = 0; j < height; j++) {
+                if((i>=50 && i<=1050)&& (j>=50 && j<=100)){
+                    bufferedImage.setRGB(j,i,scaleColor);
+                    continue;
+                }
                 color = getColor(map[i][j]);
+                //color = c.getColorForScale(map[i][j]);
                 bufferedImage.setRGB(j, i, color);
+            }
+            if(i>=50 && i<=1050) {
+                scaleColor = c2.nextColor();
             }
         }
         try {
             //ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png")); WINDOWS
-            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/img.png")); // MACOS
+            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/imgTEST.png")); // MACOS
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 
 
     private static double[][] getMap(){
@@ -136,6 +148,9 @@ public class ImageCreatorService {
         if(value==0){
             return 0xffffff;
         }
+        if(value<=1d){
+            return 0xffffff;
+        }
         else if(value<=1.25d) {
             return 0x0019ff;
         }
@@ -205,7 +220,7 @@ public class ImageCreatorService {
         else if(value<=28.75d) {
             return 0x4cff00;
         }
-        else if(value<=30) {
+        else if(value<=30d) {
             return 0x65ff00;
         }
         else if(value<=31.25d) {
@@ -229,7 +244,7 @@ public class ImageCreatorService {
         else if(value<=38.75d) {
             return 0xffe500;
         }
-        else if(value<=40) {
+        else if(value<=40d) {
             return 0xffcc00;
         }
         else if(value<=41.25d) {
@@ -253,7 +268,7 @@ public class ImageCreatorService {
         else if(value<=48.75d) {
             return 0xff1900;
         }
-        else if(value<=50) {
+        else if(value<=50d) {
             return 0xff0000;
         }
         else
