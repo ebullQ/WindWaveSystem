@@ -10,8 +10,6 @@ import java.util.Scanner;
 public class ImageCreatorService {
 
     public void makeImage(){
-        //UpdateDataService dataService = new UpdateDataService();
-        //dataService.executeProcess();
 
         double[][] map = getMap();
         for (int i = 0; i < 3; i++) {
@@ -27,21 +25,21 @@ public class ImageCreatorService {
         int scaleColor = c2.getColor();
         for (int i = 0; i< width; i++) {
             for (int j = 0; j < height; j++) {
-                if((i>=50 && i<=1050)&& (j>=50 && j<=100)){
+                if((i>=10 && i<=1210)&& (j>=50 && j<=100)){
                     bufferedImage.setRGB(j,i,scaleColor);
                     continue;
                 }
-                color = getColor(map[i][j]);
-                //color = c.getColorForScale(map[i][j]);
+                //color = getColor(map[i][j]);
+                color = c.getColorForScale(map[i][j]);
                 bufferedImage.setRGB(j, i, color);
             }
-            if(i>=50 && i<=1050) {
+            if(i>=10 && i<=1210) {
                 scaleColor = c2.nextColor();
             }
         }
         try {
-            //ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png")); WINDOWS
-            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/imgTEST.png")); // MACOS
+            ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv7.png")); //WINDOWS
+            //ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/imgTEST.png")); // MACOS
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,8 +48,8 @@ public class ImageCreatorService {
 
 
     private static double[][] getMap(){
-        //File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt"); WINDOWS
-        File file = new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/curres.txt"); // MACOS
+        File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt"); //WINDOWS
+        //File file = new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/curres.txt"); // MACOS
 
         double[][] map = new double[188][105];
 
