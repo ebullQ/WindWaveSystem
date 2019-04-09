@@ -1,6 +1,7 @@
 package service;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,8 +32,8 @@ public class ImageCreatorService {
                     bufferedImage.setRGB(j,i,scaleColor);
                     continue;
                 }
-                color = getColor(map[i][j]);
-                //color = c.getColorForScale(map[i][j]);
+                //color = getColor(map[i][j]);
+                color = c.getColorForScale(map[i][j]);
                 bufferedImage.setRGB(j, i, color);
             }
             if(i>=50 && i<=1050) {
@@ -40,8 +41,8 @@ public class ImageCreatorService {
             }
         }
         try {
-            //ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png")); WINDOWS
-            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/imgTEST.png")); // MACOS
+            //ImageIO.write(bufferedImage,"png",new File("C:\\Users\\bull3\\Desktop\\wws\\testNEWv6.png")); //WINDOWS
+            ImageIO.write(bufferedImage,"png",new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/imgTESTyyy.png")); // MACOS
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,7 +51,7 @@ public class ImageCreatorService {
 
 
     private static double[][] getMap(){
-        //File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt"); WINDOWS
+        //File file = new File("C:\\Users\\bull3\\Desktop\\wws\\curres.txt"); // WINDOWS
         File file = new File("/Users/matvey/IdeaProjects/WindWaveSystem/wws/curres.txt"); // MACOS
 
         double[][] map = new double[188][105];
@@ -272,7 +273,6 @@ public class ImageCreatorService {
             return 0xff0000;
         }
         else
-
             return 0x9b0000;
     }
 

@@ -52,7 +52,7 @@ public class UpdateDataService {
 
     }
 
-    private  void writeData(String newData) {
+    private void writeData(String newData) {
         File file = new File("C:\\Users\\bull3\\Desktop\\wws\\Curonian.swn");
 
         StringBuilder updateData = new StringBuilder();
