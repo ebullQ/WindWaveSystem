@@ -113,7 +113,7 @@ public class ImageCreatorService {
             if(line.charAt(i)=='*'){
                 counter++;
                 if(counter==4){
-                    numbers.append(0 + " ");
+                    numbers.append(-1    + " ");
                     counter=0;
                 }
             }else if(line.charAt(i)=='.'){
@@ -156,11 +156,14 @@ public class ImageCreatorService {
     }
 
     private int getColor(double value) {
-        if(value==0){
+        if(value==-1){
             return 0xffffff;
         }
+        if(value<=0){
+            return 0x0019ff;
+        }
         if(value<=1d){
-            return 0xffffff;
+            return 0x0019ff;
         }
         else if(value<=1.25d) {
             return 0x0019ff;
