@@ -30,36 +30,41 @@ public class ImageCreatorService {
     public void writeImage(){
         BufferedImage bufferedImage = getDrawnImage();
         try {
-            File uploadDir = new File("/Users/matvey/IdeaProjects/WindWaveSystem/src/main/resources/static/images");
+            File uploadDir = new File(uploadPath);
             if(!uploadDir.exists()){
                 uploadDir.mkdir();
             }
-            LocalDateTime dataTime = LocalDateTime.now();
-            Image image = new Image();
-            String filename = dataTime.toString() + ".png";
-            image.setFileName(filename);
-            image.setDate(dataTime.getDayOfMonth() + "-" + + dataTime.getMonthValue() + "-" + dataTime.getYear());
-            image.setTime(dataTime.getHour());
-            dao.saveUser(image);
-            File img = new File(uploadDir.getAbsolutePath() + "/" + "img2.png");
+            String filename = getFileName();
+            //File img = new File(uploadDir.getAbsolutePath() + "/" + "img2.png");
             ImageIO.write(bufferedImage,
                     "png",
-                    new File("/Users/matvey/IdeaProjects/WindWaveSystem/src/main/resources/static/"+ filename));
+                    new File(uploadDir + "/" + filename));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    private String getFileName(){
+        LocalDateTime dataTime = LocalDateTime.now();
+        Image image = new Image();
+        String filename = dataTime
+                .toString()
+                .replace(".","-")
+                .replace(":", "-")+ ".png";
+        image.setFileName(filename);
+        image.setDate(dataTime.getDayOfMonth() + "-" + + dataTime.getMonthValue() + "-" + dataTime.getYear());
+        image.setTime(dataTime.getHour());
+        dao.saveUser(image);
+        return filename;
+    }
+
     private BufferedImage getDrawnImage(){
         double[][] map = getMap();
-
         for (int i = 0; i < 3  ; i++) {
             map = getIterpolationMap(map);
         }
-
         int width = map[0].length;
         int height = map.length;
-
         BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Color color = new Color();
         int pixelColor;
