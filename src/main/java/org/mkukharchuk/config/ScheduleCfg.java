@@ -16,9 +16,9 @@ public class ScheduleCfg {
     @Autowired
     UpdateDataService dataService;
 
-    @Scheduled(fixedRate = 30000)
+    @Scheduled(fixedRate = 2000000)
     public void scheduleFixedDelayTask() {
-        //dataService.executeProcess();
+        dataService.executeProcess();
         imageService.writeImage();
     }
 }
