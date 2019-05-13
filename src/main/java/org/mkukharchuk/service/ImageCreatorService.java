@@ -28,15 +28,16 @@ public class ImageCreatorService {
 
     public void writeImage(){
         BufferedImage bufferedImage = getDrawnImage();
+        String path = new File("").getAbsolutePath() + uploadPath;
         try {
-            File uploadDir = new File(uploadPath);
+            File uploadDir = new File(path);
             if(!uploadDir.exists()){
                 uploadDir.mkdir();
             }
             String filename = getFileName();
             ImageIO.write(bufferedImage,
                     "png",
-                    new File(uploadDir + "/" + filename));
+                    new File(path + "/" + filename));
             System.out.println("[LOG] Image creating: success");
         } catch (IOException e) {
             System.out.println("[LOG] Image creating: failure");

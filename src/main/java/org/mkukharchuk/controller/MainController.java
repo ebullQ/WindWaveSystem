@@ -20,7 +20,6 @@ public class MainController {
     @GetMapping("/")
     public String index(Model model){
         Image lastImage = imageDAO.getLastImage();
-        String path = new File("").getAbsolutePath() + "/" + "images" + "/" + lastImage.getFileName();
         model.addAttribute("newest",lastImage.getFileName());
         return "/index";
     }
