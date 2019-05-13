@@ -15,14 +15,10 @@ import java.io.File;
 public class MainController {
 
     @Autowired
-    private ImageCreatorService service;
-
-    @Autowired
     private ImageDAO imageDAO;
 
     @GetMapping("/")
     public String index(Model model){
-        service.writeImage();
         Image lastImage = imageDAO.getLastImage();
         String path = new File("").getAbsolutePath() + "/" + "images" + "/" + lastImage.getFileName();
         model.addAttribute("newest",lastImage.getFileName());
