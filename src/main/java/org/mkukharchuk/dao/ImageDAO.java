@@ -33,8 +33,8 @@ public class ImageDAO {
     }
 
     @Transactional
-    public void saveUser(Image user) {
-        entityManager.persist(user);
+    public void saveImage(Image image) {
+        entityManager.persist(image);
     }
 
 }

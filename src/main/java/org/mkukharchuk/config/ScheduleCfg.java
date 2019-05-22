@@ -10,6 +10,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 @Configuration
 @EnableScheduling
 public class ScheduleCfg {
+
     @Autowired
     ImageCreatorService imageService;
 
@@ -18,7 +19,7 @@ public class ScheduleCfg {
 
     @Scheduled(fixedRate = 2000000)
     public void scheduleFixedDelayTask() {
-        dataService.executeProcess();
+        //dataService.updateData();
         imageService.writeImage();
     }
 }

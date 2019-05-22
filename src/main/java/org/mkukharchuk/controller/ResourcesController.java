@@ -18,8 +18,8 @@ public class ResourcesController {
         try {
             result = IOUtils.toByteArray(new FileInputStream(path));
         } catch (IOException e) {
+            e.getMessage();
         }
         return result;
     }
-
 }

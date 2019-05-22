@@ -94,4 +94,6 @@ public class ImageEncoderService {
         return doubles;
     }
 
+
+
 }
