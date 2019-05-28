@@ -2,8 +2,8 @@ package org.mkukharchuk.util.data;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.mkukharchuk.dao.WindDAO;
 import org.mkukharchuk.model.Wind;
+import org.mkukharchuk.service.WindService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -14,11 +14,11 @@ import java.io.IOException;
 public class DataParser {
     @Value("${data.source}")
     private String dataSource;
-    private final WindDAO windDAO;
+    private final WindService service;
 
     @Autowired
-    public DataParser(WindDAO windDAO) {
-        this.windDAO = windDAO;
+    public DataParser(WindService service) {
+        this.service = service;
     }
 
     public void getValues() {
@@ -36,6 +36,6 @@ public class DataParser {
         Wind wind = new Wind();
         wind.setSpeed(Double.parseDouble(data[3]));
         wind.setDirection(Integer.parseInt(data[5]));
-        windDAO.saveWind(wind);
+        service.saveWind(wind);
     }
 }

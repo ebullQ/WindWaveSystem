@@ -1,9 +1,6 @@
 package org.mkukharchuk.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Wind {
@@ -12,6 +9,8 @@ public class Wind {
     private int id;
     private double speed;
     private int direction;
+    @OneToOne(mappedBy = "wind")
+    private Image image;
 
     public Wind() {
     }

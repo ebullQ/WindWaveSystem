@@ -1,8 +1,8 @@
-package org.mkukharchuk.dao;
+package org.mkukharchuk.service;
 
 import org.mkukharchuk.model.Wind;
 
-public interface WindDAO {
+public interface WindService {
     Wind getLastWind();
     void saveWind(Wind wind);
 }

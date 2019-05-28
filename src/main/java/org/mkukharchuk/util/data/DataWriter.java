@@ -1,7 +1,7 @@
 package org.mkukharchuk.util.data;
 
-import org.mkukharchuk.dao.WindDAO;
 import org.mkukharchuk.model.Wind;
+import org.mkukharchuk.service.WindService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,18 +16,18 @@ import java.util.Scanner;
 public class DataWriter {
     @Value("${swan.instructions.file.path}")
     private String swanInstrutions;
-    private final WindDAO windDAO;
+    private final WindService service;
     private File file;
 
     @Autowired
-    public DataWriter(WindDAO windDAO) {
-        this.windDAO = windDAO;
+    public DataWriter(WindService service) {
+        this.service = service;
         file = new File(swanInstrutions);
     }
 
 
     public void writeData() {
-        Wind lastWind = windDAO.getLastWind();
+        Wind lastWind = service.getLastWind();
         String newData = lastWind.toString();
         try (FileWriter fileWriter = new FileWriter(file)) {
             fileWriter.write(getUpdatedFile(newData));

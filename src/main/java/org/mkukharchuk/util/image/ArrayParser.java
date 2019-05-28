@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 @Component
-public class ArrayCreator {
+public class ArrayParser {
 
     @Value("${swan.result.map}")
     String computingResult;

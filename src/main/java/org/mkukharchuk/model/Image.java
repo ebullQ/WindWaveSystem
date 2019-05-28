@@ -1,9 +1,6 @@
 package org.mkukharchuk.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Image {
@@ -14,6 +11,9 @@ public class Image {
     private String fileName;
     private String date;
     private int time;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "wind_id", referencedColumnName = "id")
+    private Wind wind;
 
     public Image() {
     }
@@ -44,5 +44,12 @@ public class Image {
     }
     public void setTime(int time) {
         this.time = time;
+    }
+
+    public Wind getWind() {
+        return wind;
+    }
+    public void setWind(Wind wind) {
+        this.wind = wind;
     }
 }

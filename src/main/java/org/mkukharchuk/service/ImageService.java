@@ -1,9 +1,8 @@
-package org.mkukharchuk.dao;
+package org.mkukharchuk.service;
 
 import org.mkukharchuk.model.Image;
 
-public interface ImageDAO {
-
+public interface ImageService {
     Image getImageById(int id);
     Image getLastImage();
     void saveImage(Image image);

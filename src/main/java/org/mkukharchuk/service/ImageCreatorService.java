@@ -1,9 +1,8 @@
 package org.mkukharchuk.service;
 
-import org.mkukharchuk.dao.ImageDAO;
 import org.mkukharchuk.model.Image;
-import org.mkukharchuk.util.image.ArrayCreator;
 import org.mkukharchuk.util.image.ArrayInterpolator;
+import org.mkukharchuk.util.image.ArrayParser;
 import org.mkukharchuk.util.image.Color;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,11 +22,14 @@ public class ImageCreatorService {
     @Autowired
     private ArrayInterpolator interpolator;
     @Autowired
-    private ArrayCreator creator;
+    private ArrayParser creator;
     @Autowired
     private Color color;
     @Autowired
-    private ImageDAO dao;
+    private ImageService imageService;
+    @Autowired
+    private WindService windService;
+
 
     public void writeImage(){
         BufferedImage bufferedImage = getDrawnImage();
@@ -57,7 +59,8 @@ public class ImageCreatorService {
         image.setFileName(filename);
         image.setDate(dataTime.getDayOfMonth() + "-" + + dataTime.getMonthValue() + "-" + dataTime.getYear());
         image.setTime(dataTime.getHour());
-        dao.saveImage(image);
+        image.setWind(windService.getLastWind());
+        imageService.saveImage(image);
         return filename;
     }
 
@@ -76,14 +79,4 @@ public class ImageCreatorService {
         System.out.println("[LOG] Image has drawn");
         return bufferedImage;
     }
-
-
-
-
-
-
-
-
-
-
 }
