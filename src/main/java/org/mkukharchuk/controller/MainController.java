@@ -18,6 +18,7 @@ public class MainController {
     public String index(Model model){
         Image lastImage = imageDAOImpl.getLastImage();
         model.addAttribute("newest",lastImage.getFileName());
+        model.addAttribute("windDirection", lastImage.getWind().getDirectionImageName());
         return "index";
     }
 

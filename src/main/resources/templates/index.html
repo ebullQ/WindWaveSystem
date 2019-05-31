@@ -25,13 +25,25 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active crs">
-                <img src="../static/images/11.jpg" alt="1">
+                <img src="../static/images/carousel/first.jpg" alt="1">
+                <div class="carousel-caption">
+                    <h3>Добро пожаловать</h3>
+                    <p class="pinf">Данный сервис предоставляет информацию о высоте волн Куршского залива.</p>
+                </div>
             </div>
             <div class="carousel-item crs">
-                <img src="../static/images/22.jpg" alt="2">
+                <img src="../static/images/carousel/second.jpg" alt="2">
+                <div class="carousel-caption">
+                    <h3>Оперативная информация</h3>
+                    <p class="pinf">Данные обновляются каждый час, вы можете следить за актуальным состоянием объекта.</p>
+                </div>
             </div>
             <div class="carousel-item crs">
-                <img src="../static/images/33.jpg" alt="New 3">
+                <img src="../static/images/carousel/third.jpg" alt="New 3">
+                <div class="carousel-caption">
+                    <h3>Производимые расчеты</h3>
+                    <p class="pinf">Расчеты производятся спектральной моделью SWAN и учитывает скорость и направление ветра.</p>
+                </div>
             </div>
         </div>
 
@@ -46,20 +58,14 @@
     </div>
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">Wind Wave</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
         </div>
@@ -71,15 +77,14 @@
             <h2>Информация о ветре:</h2>
             <h4>Скорость <span th:text="${newest.wind.time}">5</span> км/c</h4>
             <h4>Направление</h4>
-            <img src="http://kiteschool.lv/wp-content/uploads/2011/05/Roza-vetrov-RU-300x300.jpg"
+            <img class="text-center" th:src="@{../static/images/direction/{windDirection}(windDirection = ${windDirection})}"/>
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8 text-center">
             <h2>Модель ветрового волнения</h2>
-            <!--th:src="@{images/{newest}(newest = ${newest})}"-->
-            <img class="wives" src="../static/images/simple.png" />
+            <img class="wives" th:src="@{images/{newest}(newest = ${newest})}" />
             <h4>Высота волны, м</h4>
-            <img class="shale" src="../static/images/scale.png" />
+            <img class="shale" src="../static/images/scale.jpg" />
         </div>
     </div>
 </div>
