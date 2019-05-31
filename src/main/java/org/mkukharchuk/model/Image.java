@@ -11,7 +11,7 @@ public class Image {
     private String fileName;
     private String date;
     private int time;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "wind_id", referencedColumnName = "id")
     private Wind wind;
 

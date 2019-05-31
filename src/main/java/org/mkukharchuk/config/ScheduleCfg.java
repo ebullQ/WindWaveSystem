@@ -19,7 +19,7 @@ public class ScheduleCfg {
 
     @Scheduled(fixedRate = 2000000)
     public void scheduleFixedDelayTask() {
-        //dataService.updateData();
+        dataService.updateData();
         imageService.writeImage();
     }
 }

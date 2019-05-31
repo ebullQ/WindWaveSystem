@@ -22,11 +22,12 @@ public class DataWriter {
     @Autowired
     public DataWriter(WindService service) {
         this.service = service;
-        file = new File(swanInstrutions);
+
     }
 
 
     public void writeData() {
+        file = new File(swanInstrutions);
         Wind lastWind = service.getLastWind();
         String newData = lastWind.toString();
         try (FileWriter fileWriter = new FileWriter(file)) {

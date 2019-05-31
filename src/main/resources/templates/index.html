@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 <body>
     <!--<div class="jumbotron text-center" style="margin-bottom:0">-->
@@ -25,21 +25,21 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active crs">
-                <img src="../static/images/carousel/first.jpg" alt="1">
+                <img src="/img/carousel/first.jpg" alt="1">
                 <div class="carousel-caption">
                     <h3>Добро пожаловать</h3>
                     <p class="pinf">Данный сервис предоставляет информацию о высоте волн Куршского залива.</p>
                 </div>
             </div>
             <div class="carousel-item crs">
-                <img src="../static/images/carousel/second.jpg" alt="2">
+                <img src="/img/carousel/second.jpg" alt="2">
                 <div class="carousel-caption">
                     <h3>Оперативная информация</h3>
                     <p class="pinf">Данные обновляются каждый час, вы можете следить за актуальным состоянием объекта.</p>
                 </div>
             </div>
             <div class="carousel-item crs">
-                <img src="../static/images/carousel/third.jpg" alt="New 3">
+                <img src="/img/carousel/third.jpg" alt="New 3">
                 <div class="carousel-caption">
                     <h3>Производимые расчеты</h3>
                     <p class="pinf">Расчеты производятся спектральной моделью SWAN и учитывает скорость и направление ветра.</p>
@@ -75,16 +75,16 @@
     <div class="row">
         <div class="col-sm-4">
             <h2>Информация о ветре:</h2>
-            <h4>Скорость <span th:text="${newest.wind.time}">5</span> км/c</h4>
+            <h4>Скорость <span th:text="${newest.wind.speed}">5</span> км/c</h4>
             <h4>Направление</h4>
-            <img class="text-center" th:src="@{../static/images/direction/{windDirection}(windDirection = ${windDirection})}"/>
+            <img class="text-center" th:src="@{/static/img/direction/{windDirection}(windDirection = ${windDirection})}"/>
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8 text-center">
             <h2>Модель ветрового волнения</h2>
-            <img class="wives" th:src="@{images/{newest}(newest = ${newest})}" />
+            <img class="wives" th:src="@{img/{newest}(newest = ${newest.fileName})}" />
             <h4>Высота волны, м</h4>
-            <img class="shale" src="../static/images/scale.jpg" />
+            <img class="shale" src="/img/scale.jpg" />
         </div>
     </div>
 </div>
