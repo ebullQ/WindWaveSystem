@@ -43,19 +43,19 @@ public class Wind {
 
     public String getDirectionImageName(){
         if(direction<=45){
-            return "SV.png";
+            return "SE.png";
         }else if(direction<=90){
-            return "V.png";
+            return "E.png";
         }else if(direction<=135){
-            return "UV.png";
+            return "NE.png";
         }else if(direction<=180){
-            return "U.png";
+            return "N.png";
         }else if(direction<=225){
-            return "UZ.png";
+            return "NW.png";
         }else if(direction<=270){
-            return "Z.png";
+            return "W.png";
         } else if(direction<=315){
-            return "SZ.png";
+            return "SW.png";
         }else{
             return "S.png";
         }

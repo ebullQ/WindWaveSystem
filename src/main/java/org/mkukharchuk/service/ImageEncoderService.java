@@ -11,7 +11,7 @@ import java.util.Base64;
 @Service
 public class ImageEncoderService {
 
-    public static String encoder(String imagePath) {
+    public  String encoder(String imagePath) {
         String base64Image = "";
         File file = new File(imagePath);
         try (FileInputStream imageInFile = new FileInputStream(file)) {

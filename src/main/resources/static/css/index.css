@@ -25,4 +25,9 @@
     .carousel-caption {
         /* display: none;  Hide the carousel text when the screen is less than 600 pixels wide */
     }
+
+    .wind-image{
+        height: 70%;
+        width: 70%;
+    }
 }

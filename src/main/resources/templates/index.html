@@ -75,9 +75,10 @@
     <div class="row">
         <div class="col-sm-4">
             <h2>Информация о ветре:</h2>
-            <h4>Скорость <span th:text="${newest.wind.speed}">5</span> км/c</h4>
+            <h4>Скорость <span th:text="${newest.wind.speed}">5</span> м/c</h4>
             <h4>Направление</h4>
-            <img class="text-center" th:src="@{/static/img/direction/{windDirection}(windDirection = ${windDirection})}"/>
+            <!--<img class="text-center" th:src="@{/direction/{windDirection}(windDirection = ${windDirection})}"/>-->
+            <img class="wind-image text-center" th:src="@{data:image/png;base64,{windDirection}(windDirection = ${windDirection})}"/>
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8 text-center">
@@ -90,7 +91,7 @@
 </div>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-    <p>Сайт разработан Кухарчуком М.М. в демонстрационных целях. 2019</p>
+    <p>Сайт создан в демонстрационных целях (с) 2019</p>
 </div>
 
 </body>
