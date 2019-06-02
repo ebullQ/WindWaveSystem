@@ -78,12 +78,12 @@
             <h4>Скорость <span th:text="${newest.wind.speed}">5</span> м/c</h4>
             <h4>Направление</h4>
             <!--<img class="text-center" th:src="@{/direction/{windDirection}(windDirection = ${windDirection})}"/>-->
-            <img class="wind-image text-center" th:src="@{data:image/png;base64,{windDirection}(windDirection = ${windDirection})}"/>
+            <img class="wind-image" th:src="@{data:image/png;base64,{windDirection}(windDirection = ${windDirection})}"/>
             <hr class="d-sm-none">
         </div>
         <div class="col-sm-8 text-center">
             <h2>Модель ветрового волнения</h2>
-            <img class="wives" th:src="@{img/{newest}(newest = ${newest.fileName})}" />
+            <img class="wives" th:src="@{images/{newest}(newest = ${newest.fileName})}" />
             <h4>Высота волны, м</h4>
             <img class="shale" src="/img/scale.jpg" />
         </div>

@@ -69,7 +69,11 @@ public class UpdateDataService {
         wind.setSpeed(Double.parseDouble(data[3]));
         wind.setDirection(Integer.parseInt(data[5]));
         windService.saveWind(wind);
-        return data[3]+ " " + data[5];
+        double d = Double.parseDouble(data[3]);
+        if(d<=1.9d){
+            return (Double.parseDouble(data[3])+0.5d)+ " " + data[5];
+        }
+        return data[3] + " " + data[5];
 
     }
 
