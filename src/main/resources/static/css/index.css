@@ -1,0 +1,36 @@
+.wives{
+    width: 98%;
+}
+.shale{
+    width: 98%;
+}
+
+.wind-image{
+    max-width: 100%;
+}
+
+.col-sm-8.text-center{
+    padding-bottom: 5ch;
+}
+
+.carousel-inner img {
+    width: 100%;
+    margin: auto;
+    max-height: 98%;
+
+}
+.carousel-caption h3 {
+    color: #fff !important;
+}
+.carousel-caption{
+    text-shadow: 1px 1px 1px #000
+}
+@media (max-width: 600px) {
+    .carousel-caption {
+        /* display: none;  Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+
+    .wind-image{
+        width: 50%;
+    }
+}
