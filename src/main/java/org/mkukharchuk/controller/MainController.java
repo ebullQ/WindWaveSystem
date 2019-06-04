@@ -25,8 +25,14 @@ public class MainController {
     public String index(Model model){
         Image lastImage = imageDAOImpl.getLastImage();
         model.addAttribute("newest",lastImage);
+        model.addAttribute("windDirectionName", lastImage.getWind().getDirectionName());
         model.addAttribute("windDirection", encoderService.encoder(path + lastImage.getWind().getDirectionImageName()));
         return "index";
+    }
+
+    @GetMapping("/about")
+    public String about(){
+        return "about";
     }
 
 }
